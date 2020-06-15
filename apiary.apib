@@ -1381,7 +1381,7 @@ Object used to mark order items as sent.
 + `document` (DocumentRequest, optional) - Attached invoice (invoice, proforma invoice...)
 + `variableSymbol`: `1234567890` (string, optional) - Required if was not specified earlier in 'Create application' or 'Change application order' operations. Symbol used for making the payment to your account. This string must contain only numbers, maximum length is 10 characters (digits).
 + `specificSymbol`: `1234567890` (string, optional) - Symbol used for making the payment to your account. This string must contain only numbers, maximum length is 10 characters (digits).
-+ `sentDate`: `2017-01-12T00:00:00+02:00` (string, optional) - Shipping date and time (fill just the date if you can't specify a shipping time)
++ `sentDate`: `2017-01-10` (string, optional) - Shipping date and time (fill just the date if you can't specify a shipping time)
 + `deliveryCarrier` (DeliveryCarrier, optional) - Carrier
 + `deliveryTrackingNumber`: `EEX1221` (string, optional) - Delivery tracking number
 
@@ -1389,7 +1389,7 @@ Object used to mark order items as sent.
 Object used to mark order items as delivered.
 
 ### Properties
-+ `deliveryDate`: `2017-01-15T00:00:00+02:00` (string, optional) - Delivery date and time (fill just the date if you can't specify a time of delivery)
++ `deliveryDate`: `2017-01-10` (string, optional) - Delivery date and time (fill just the date if you can't specify a time of delivery)
 
 ## OrderItemsCancelRequest (OrderItemsChangeRequest)
 Object used to mark order items as cancelled.
@@ -1437,9 +1437,9 @@ Order information, needed to create an application.
     + `DELIVERED` - All order items was delivered to customer
     + `RETURNED` - All order items was returned to merchant
     + `CANCELLED` - Order was fully cancelled
-+ `deliveryDate`: `2017-01-17T00:00:00+02:00` (string, optional) - Date and time of delivery
++ `deliveryDate`: `2017-01-10` (string, optional) - Date and time of delivery
 + `deliveryTrackingNumber`: `EX12221` (string, optional) - Delivery tracking number
-+ `sentDate`: `2017-01-12T00:00:00+02:00` (string, optional) - Date and time of order shipping
++ `sentDate`: `2017-01-10` (string, optional) - Date and time of order shipping
 + `documents` (array[DocumentResponse], optional) - Attached documents (invoices etc.)
 + `items` (array[OrderItemResponse], required) - Order items
 
