@@ -1193,6 +1193,34 @@ Notification about new payment.
 
         Can not process changes
 
+## Approved Redirect [/financing/v1/approvedRedirect?mpOrderNumber={mpOrderNumber}&mpTimestamp={mpTimestamp}&mpSignature={mpSignature}]
+We use this resource when the *application* is approved on our Gate to redirect the customer back to your website.
+> mpSignature is a string of "mpOrderNumber|mpTimestamp" values encrypted (SHA256) by our private key in base64. You can decrypt it with our public key to validate that the data in mpOrderNumber and mpTimestamp are authentic.
+
++ Parameters
+    + `mpOrderNumber`: `12345678` (string) - Order number.
+    + `mpTimestamp`: 1609761600 (number) - UNIX timestamp (in seconds).
+    + `mpSignature`: `nVm6sjsDCYa9vf5ocCkoQ2js6FpXXg6Ts1neeoftJomZqmgfOCFySGhSKnBS%2Fmms1fSVAuyx8XU6DqZjvvvvVVaZwV6aYqKee8MtkZ0ClBIH2EzSS4S1EuXAVHmjNv9f9xr63WfK%2Bxhyvvvzw2KwyQxsZr1%2B42CQtf70rI3jYGQ%3D` (string) - base64 urlencoded signature
+
+### Approved Redirect [GET]
+Redirect the customer to partner website after successful application.
+
++ Response 200 (application/json; charset=utf-8)
+
+## Rejected Redirect [/financing/v1/rejectedRedirect?mpOrderNumber={mpOrderNumber}&mpTimestamp={mpTimestamp}&mpSignature={mpSignature}]
+We use this resource when the *application* is rejected on our Gate to redirect the customer back to your website.
+> mpSignature is a string of "mpOrderNumber|mpTimestamp" values encrypted (SHA256) by our private key in base64. You can decrypt it with our public key to validate that the data in mpOrderNumber and mpTimestamp are authentic.
+
++ Parameters
+    + `mpOrderNumber`: `12345678` (string) - Order number.
+    + `mpTimestamp`: 1609761600 (number) - UNIX timestamp (in seconds).
+    + `mpSignature`: `nVm6sjsDCYa9vf5ocCkoQ2js6FpXXg6Ts1neeoftJomZqmgfOCFySGhSKnBS%2Fmms1fSVAuyx8XU6DqZjvvvvVVaZwV6aYqKee8MtkZ0ClBIH2EzSS4S1EuXAVHmjNv9f9xr63WfK%2Bxhyvvvzw2KwyQxsZr1%2B42CQtf70rI3jYGQ%3D` (string) - base64 urlencoded signature
+
+
+### Rejected Redirect [GET]
+Redirect the customer to partner website after unsuccessful application.
+
++ Response 200 (application/json; charset=utf-8)
 
 # Group Health check
 To check the availability of back-end services use the [health check resource](#reference/health-check/health-check).
